@@ -20,32 +20,32 @@ echo -e "${color}*************************************${reset}"
 }
 
 boldMessage 14 "Building Ember app"
-cd ember
+cd ../ember
 ember build --environment production
-cd ../
+cd ../rails
 
-rm -rf rails/public/assets
-rm -rf rails/public/ember-assets
+rm -rf public/assets
+rm -rf public/ember-assets
 
 printMessage 14 "Copying ember build files to rails"
-cp -r ember/dist/* rails/public/
+cp -r ../ember/dist/* public/
 
 printMessage 14 "Swaping assets dir for ember-assets"
-mv rails/public/assets rails/public/ember-assets
+mv public/assets public/ember-assets
 
-printMessage 14 "replacing references s/assets/ember-assets/ in rails/public/index.html"
-sed -i.bck s/assets/ember-assets/ rails/public/index.html
+printMessage 14 "replacing references s/assets/ember-assets/ in public/index.html"
+sed -i.bck s/assets/ember-assets/ public/index.html
 
 printMessage 14 "inserting csrf_meta_tags in head"
-sed -i.bck 's/<\/head>/  <%= csrf_meta_tags %>&/' rails/public/index.html
+sed -i.bck 's/<\/head>/  <%= csrf_meta_tags %>&/' public/index.html
 
 printMessage 14 "inserting yield in body"
-sed -i.bck 's/<body>/&\n    <%= yield %>/' rails/public/index.html
+sed -i.bck 's/<body>/&\n    <%= yield %>/' public/index.html
 
 printMessage 14 "Replacing application.html.erb with index.html"
-mv rails/public/index.html rails/app/views/layouts/application.html.erb
+mv public/index.html app/views/layouts/application.html.erb
 
 printMessage 14 "Cleaning Up"
-rm rails/public/index.html.bck
+rm public/index.html.bck
 
 boldMessage 14 "Done"
