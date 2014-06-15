@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   def index
     render json: Comment
     .where("body is not null")
@@ -16,5 +16,4 @@ class CommentsController < ApplicationController
       render json: @post
     end
   end
-
 end

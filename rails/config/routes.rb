@@ -1,3 +1,5 @@
 Fcc::Application.routes.draw do
-  resources :comments
+  namespace :api do
+    resources :comments
+  end
 end
