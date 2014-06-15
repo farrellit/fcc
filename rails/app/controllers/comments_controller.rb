@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
   def index
+    render json: Comment.where("body is not null").where(:proceeding_number => '14-28')
   end
 
   def show
-  end
-
-  def create
+    render json: Post.find(params[:id])
   end
 
   def update
-  end
-
-  def delete
+    @post = Post.find(params[:id])
+    if @post.save!(params)
+      render json: @post
+    end
   end
 
 end
