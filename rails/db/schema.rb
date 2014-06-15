@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 20140614223901) do
     t.string   "nameof_filer"
     t.string   "typeof_filing"
     t.string   "exparte"
-    t.date     "data_received"
+    t.date     "date_received"
     t.date     "date_posted"
     t.string   "address"
     t.decimal  "view_id",           precision: 12, scale: 0
     t.decimal  "document_id",       precision: 12, scale: 0
     t.string   "view_url"
     t.string   "document_url"
-    t.text     "comment"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
