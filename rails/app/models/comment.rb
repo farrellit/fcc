@@ -2,6 +2,10 @@ class Comment < ActiveRecord::Base
   include Scraper
   after_create :fetch_remote
 
+  #validates_presence_of :body, message: "Ain't got no body.", on: 
+  #validates_inclusion_of :proceeding_number, in: ['14-28'],
+    #message: "Not neutrality"
+
   protected
 
   def fetch_remote
