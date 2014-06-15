@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>NTRLTY</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NTRLTY</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <base href "/" />
+    <base href="/" />
 
-  <link rel="stylesheet" href="ember-assets/vendor.css">
-  <link rel="stylesheet" href="ember-assets/fcc.css">
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= yield %>
+    <link rel="stylesheet" href="ember-assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css">
+    <link rel="stylesheet" href="ember-assets/fcc-de3c495d5da3bffcdc865aaa60f76ab3.css">
+    <%= csrf_meta_tags %></head>
+  <body>
+    <%= yield %>
     <script>
-window.FccENV = {"railsCsrf":{"csrfURL":"api/csrf"},"baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},""APP":{}};
+      window.FccENV = {"environment":"production","baseURL":"/","locationType":"auto","railsCsrf":{"csrfURL":"api/csrf_token"},"EmberENV":{"FEATURES":{}},"APP":{}};
       window.EmberENV = window.FccENV.EmberENV;
     </script>
-    <script src="ember-assets/vendor.js"></script>
-    <script src="ember-assets/fcc.js"></script>
+    <script src="ember-assets/vendor-29d42fb16acaa11e0717ac24e38158da.js"></script>
+    <script src="ember-assets/fcc-42c24e0b06c0359cb96d560c8e2ea883.js"></script>
     <script>
-      window.Client = require('client/app')['default'].create(FccENV.APP);
+      window.Fcc = require('fcc/app')['default'].create(FccENV.APP);
     </script>
-</body>
+  </body>
 </html>
