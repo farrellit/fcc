@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
   def index
-    render json: Comment.where("body is not null").where(:proceeding_number => '14-28')
+    render json: Comment
+    .where("body is not null")
+    .where(:proceeding_number => '14-28')
+    .order(view_id: :desc)
   end
 
   def show
