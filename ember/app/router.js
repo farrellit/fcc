@@ -5,6 +5,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.resource('comments', function() {
+    this.route('show', {path: ':comment_id'});
+  });
 });
 
 export default Router;
