@@ -36,5 +36,10 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
+app.import('vendor/rails-csrf/dist/named-amd/main.js', {
+  'rails-csrf': [
+    'service'
+  ]
+});
 
 module.exports = app.toTree();
